@@ -1,73 +1,65 @@
 <manifest
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	package="kuesji.link_eye">
+	xmlns:tools="http://schemas.android.com/tools" package="kuesji.link_eye">
 
-	<queries>
-		<intent>
-			<action android:name="android.intent.action.VIEW"/>
-			<category android:name="android.intent.category.BROWSABLE"/>
-			<category android:name="android.intent.category.DEFAULT"/>
+				<uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" tools:ignore="QueryAllPackagesPermission"/>
 
-			<data android:scheme="*"/>
-		</intent>
-	</queries>
+				<application
+					android:allowBackup="true"
+					android:icon="@mipmap/link_eye"
+					android:label="link eye"
+					android:theme="@android:style/Theme.Material.NoActionBar">
 
-	<application
-		android:allowBackup="true"
-		android:icon="@mipmap/link_eye"
-		android:label="link eye"
-		android:theme="@android:style/Theme.DeviceDefault.Dialog.NoActionBar">
+								<activity
+									android:name=".Main"
+									android:excludeFromRecents="true">
+												<intent-filter>
+																<action android:name="android.intent.action.MAIN"/>
+																<category android:name="android.intent.category.LAUNCHER"/>
+																<category android:name="android.intent.category.DEFAULT"/>
+												</intent-filter>
 
-		<activity
-			android:name=".Main"
-			android:excludeFromRecents="true">
-			<intent-filter>
-				<action android:name="android.intent.action.MAIN"/>
-				<category android:name="android.intent.category.LAUNCHER"/>
-				<category android:name="android.intent.category.DEFAULT"/>
-			</intent-filter>
+												<intent-filter>
+																<action android:name="android.intent.action.SEND"/>
+																<category android:name="android.intent.category.DEFAULT"/>
+																<data android:mimeType="text/plain"/>
+												</intent-filter>
 
-			<intent-filter>
-				<action android:name="android.intent.action.SEND"/>
-				<category android:name="android.intent.category.DEFAULT"/>
-				<data android:mimeType="text/plain"/>
-			</intent-filter>
+												<intent-filter>
+																<action android:name="android.intent.action.VIEW"/>
+																<category android:name="android.intent.category.BROWSABLE"/>
+																<category android:name="android.intent.category.DEFAULT"/>
 
-			<intent-filter>
-				<action android:name="android.intent.action.VIEW"/>
-				<category android:name="android.intent.category.BROWSABLE"/>
-				<category android:name="android.intent.category.DEFAULT"/>
+																<data android:scheme="http"/>
+																<data android:scheme="https"/>
+																<data android:scheme="about"/>
+																<data android:scheme="javascript"/>
+																<data android:scheme="mailto"/>
+																<data android:scheme="geo"/>
+																<data android:scheme="file"/>
 
-				<data android:scheme="http"/>
-				<data android:scheme="https"/>
-				<data android:scheme="about"/>
-				<data android:scheme="javascript"/>
-				<data android:scheme="mailto"/>
-				<data android:scheme="geo"/>
-				<data android:scheme="file"/>
+																<data android:scheme="rtsp"/>
+																<data android:scheme="rtmp"/>
+																<data android:scheme="ftp"/>
+																<data android:scheme="sftp"/>
 
-				<data android:scheme="rtsp"/>
-				<data android:scheme="rtmp"/>
-				<data android:scheme="ftp"/>
-				<data android:scheme="sftp"/>
+																<data android:scheme="skype"/>
+																<data android:scheme="sms"/>
+																<data android:scheme="smsto"/>
+																<data android:scheme="mms"/>
+																<data android:scheme="mmsto"/>
+																<data android:scheme="spotify"/>
+																<data android:scheme="tel"/>
+																<data android:scheme="voicemail"/>
+																<data android:scheme="view-source"/>
+																<data android:scheme="sqlite"/>
+																<!--<data android:scheme="market"/>-->
+																<data android:scheme="store"/>
+																<data android:scheme="android"/>
 
-				<data android:scheme="skype"/>
-				<data android:scheme="sms"/>
-				<data android:scheme="smsto"/>
-				<data android:scheme="mms"/>
-				<data android:scheme="mmsto"/>
-				<data android:scheme="spotify"/>
-				<data android:scheme="tel"/>
-				<data android:scheme="voicemail"/>
-				<data android:scheme="view-source"/>
-				<data android:scheme="sqlite"/>
-				<data android:scheme="market"/>
-				<data android:scheme="store"/>
-				<data android:scheme="android"/>
+												</intent-filter>
+								</activity>
 
-			</intent-filter>
-		</activity>
-
-	</application>
+				</application>
 
 </manifest>
