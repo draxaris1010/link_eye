@@ -199,6 +199,7 @@ public class MainUI extends LinearLayout {
 								LinearLayout c = new LinearLayout(getContext());
 								c.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
 								c.setGravity(Gravity.TOP | Gravity.START);
+								c.setOrientation(LinearLayout.VERTICAL);
 								s.addView(c);
 
 								OnClickListener listener = (v) -> {
