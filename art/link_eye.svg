@@ -9,6 +9,9 @@
    id="svg5"
    inkscape:version="1.1 (c4e8f9ed74, 2021-05-24)"
    sodipodi:docname="link_eye.svg"
+   inkscape:export-filename="/data/jails/kuesji/intellij/projects/kuesji.link_eye/art/link_eye.png"
+   inkscape:export-xdpi="256"
+   inkscape:export-ydpi="256"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +29,7 @@
      units="px"
      height="512px"
      inkscape:zoom="0.6034712"
-     inkscape:cx="446.58304"
+     inkscape:cx="348.81532"
      inkscape:cy="202.99229"
      inkscape:window-width="1366"
      inkscape:window-height="707"
@@ -48,7 +51,7 @@
        x="0"
        y="-135.46666"
        transform="rotate(90)"
-       ry="0"
+       ry="14.973608"
        rx="0" />
     <path
        id="rect1326"

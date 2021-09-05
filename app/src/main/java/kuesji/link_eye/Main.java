@@ -19,27 +19,28 @@ import java.util.List;
 import java.util.Locale;
 
 public class Main extends Activity {
+	MainUI ui;
 
-				Intent intent;
-				MainUI ui;
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
 
-				protected void onCreate(Bundle savedInstanceState) {
-								super.onCreate(savedInstanceState);
+		ui = new MainUI(this);
+		ui.close.setOnClickListener((v) -> {
+			finish();
+		});
+		setContentView(ui);
 
-								ui = new MainUI(this);
-								ui.close.setOnClickListener((v)->{
-												finishAndRemoveTask();
-								});
-								setContentView(ui);
-
-								intent = getIntent();
-								switch (intent.getAction()){
-												case Intent.ACTION_VIEW:
-																ui.setURL(intent.getDataString());
-																break;
-												case Intent.ACTION_SEND:
-																ui.setURL(intent.getExtras().getString(Intent.EXTRA_TEXT));
-																break;
-								}
-				}
+		Intent intent = getIntent();
+		switch (intent.getAction()) {
+			case Intent.ACTION_VIEW:
+				ui.setURL(intent.getDataString());
+				break;
+			case Intent.ACTION_SEND:
+				ui.setURL(intent.getExtras().getString(Intent.EXTRA_TEXT));
+				break;
+			default:
+				ui.setURL("https://twitter.com/kuesji");
+				break;
+		}
+	}
 }
